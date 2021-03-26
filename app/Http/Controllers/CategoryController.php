@@ -4,27 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Car;
+
 
 class CategoryController extends Controller
 {
-    public function create(Request $request)
-    {
-        return Category::create([
-            'name' =>$request->name,
-            'image' =>$request->image
-        ]);
-    }
-    public function show()
-    {
-        return Category::all();
-    }
-    public function showById($id)
-    {
-        return Category::whereId($id)->get();
-    }
+   
+    //show all categories at index page
     public function listCategories()
     {
-        $categories=$this->show();
+        $categories=Category::all();
         return view('home')->withCategories($categories);
     }
 

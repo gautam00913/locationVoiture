@@ -19,10 +19,14 @@
     </head>
     <body class="antialiased">
         <nav class="navbar navbar-expand navbar-dark bg-danger">
-              <a class="navbar-brand" href="{{ route('login') }}">
-                  Cars House
-              </a>
-              
+            <div class="navbar-header">
+                  <a class="navbar-brand" href="{{ route('home') }}">
+                      Cars House
+                  </a>
+                  <a class="ml-2" href="{{ route('location') }}">
+                     Véhicules loués
+                  </a>
+              </div>
                 <ul class="navbar-nav ml-auto">
                     @if (Route::has('login'))
                         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">

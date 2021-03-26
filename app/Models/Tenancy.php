@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Tenancy extends Model
 {
     use HasFactory;
-    protected $fillable=['name','image'];
-    public $timestamps=false;
-
+    protected $fillable=['user_id', 'car_id', 'located_at'];
+    
 }
