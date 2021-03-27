@@ -21,9 +21,9 @@
         <nav class="navbar navbar-expand navbar-dark bg-danger">
             <div class="navbar-header">
                   <a class="navbar-brand" href="{{ route('home') }}">
-                      Cars House
+                      <img src=" {{ asset('/images/logo.jpg') }} " alt="logo" class="rounded-circle" style="width:100px; height:auto;">
                   </a>
-                  <a class="ml-2" href="{{ route('location') }}">
+                  <a class="ml-2 text-sm text-white" href="{{ route('listTenant') }}">
                      Véhicules loués
                   </a>
               </div>

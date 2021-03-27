@@ -55,10 +55,10 @@
                             <div class="text-sm text-gray-900">{{ $car->location_price }} F CFA</div>
                           </td>
                           <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-900">{{ $car->state }}</div>
+                            <div class="text-sm text-gray-900">{{ $car->category }}</div>
                           </td>
                           <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="text-sm text-gray-900">{{ $car->category }}</div>
+                            <div class="text-sm text-gray-900">{{ $car->state }}</div>
                           </td>
                           <td class="px-6 py-4 whitespace-nowrap">
                             <div class="text-sm text-gray-900">{{ $car->created_at }}</div>

@@ -40,10 +40,13 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'=>'required'
+            'name'=>'required',
+            'image'=>'required|image'
         ]);
+        $imagePath=request('image')->store('uploads', 'public');
           Category::create([
-            'name' =>$request->name
+            'name' =>$request->name,
+            'image'=>$imagePath
         ]);
           return redirect()->route('admin_categories.index');
     }
@@ -84,12 +87,16 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name'=>'required'
+            'name'=>'required',
+            'image'=>'required|image'
         ]);
-        $date=new \Datetime;
-          Category::update([
+        $imagePath=$request->image->store('uploads', 'public');
+        $category=Category::findOrFail($id);
+
+          $category->update([
             'name' =>$request->name,
-            'update_at'=>$date
+            'image'=>$imagePath,
+            'update_at'=>new \Datetime
         ]);
           return redirect()->route('admin_categories.index');
     }

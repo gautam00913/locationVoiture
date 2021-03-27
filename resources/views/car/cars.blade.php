@@ -8,7 +8,7 @@
             @foreach($cars as $car)
                 <div class="col-sm-6 col-md-3 col-lg-3 p-3 bg-white m-3">
                     <div class="row">
-                        <img src="" alt="" class="w-100">
+                        <img src=" {{ asset('storage') .'/'. $car->image}} " alt="image voiture" class="w-100">
                     </div>
                     <p> {{ $car->mark}} </p>
                     <p class="bg-primary text-white text-center">

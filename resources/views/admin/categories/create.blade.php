@@ -8,7 +8,7 @@
         <div class="py-12 w-1/2 ">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
-                      <form action=" {{ route('admin_categories.store') }} " method="POST" class="p-2">
+                      <form action=" {{ route('admin_categories.store') }} " method="POST" class="p-2" enctype="multipart/form-data">
                         @csrf
                         <div class="my-2">
                             <label class="block mb-5">Catégorie de voiture </label>

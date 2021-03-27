@@ -13,7 +13,7 @@
 <div class="row">
     @foreach($categories as $category)
         <div class="col-md-3 p-3 bg-white m-3 text-center">
-            <img src="{{ asset('images/'. $category->image) }}" alt="image de voiture" class="w-100 mb-3">
+            <img src="{{ asset('storage') .'/'. $category->image }}" alt="image de voiture" class="w-100 h-75 mb-3">
             <div class="divider"></div>
             <a href="/cars/{{ $category->name }}" class="btn btn-danger mt-3">
                 <span>( {{ $category->name }} )</span>

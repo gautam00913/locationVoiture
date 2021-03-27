@@ -43,13 +43,16 @@ class CarController extends Controller
         $this->validate($request, [
             'mark'=>'required',
             'location_price'=>'required',
-            'category'=>'required'
+            'category'=>'required',
+            'image'=>'required|image'
         ]);
+        $imagePath=$request->image->store('uploads', 'public');
         $date=new \Datetime();
         Car::create([
             'mark'=>$request->mark,
             'location_price'=>$request->location_price,
             'category'=>$request->category,
+            'image' =>$imagePath,
             'created_at'=>$date,
             'update_at'=>$date
         ]);
@@ -95,14 +98,16 @@ class CarController extends Controller
          $this->validate($request, [
             'mark'=>'required',
             'location_price'=>'required',
-            'category'=>'required'
+            'category'=>'required',
+            'image'=>'required|image'
         ]);
-        $date=new \Datetime();
-        Car::update([
+        $imagePath=$request->image->store('uploads', 'public');
+        $car=Car::findOrFail($id);
+        $car->update([
             'mark'=>$request->mark,
             'location_price'=>$request->location_price,
             'category'=>$request->category,
-            'update_at'=>$date
+            'update_at'=>new \Datetime()
         ]);
         return redirect()->route('admin_cars.index');
     }
